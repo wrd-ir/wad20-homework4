@@ -44,7 +44,7 @@ const testData = [
         text: "I think it's going to rain",
         createTime: "2020-12-05 13:53:23",
         likes: 0,
-        liked: 0,
+        liked: false,
         media: {
             url: "test-image.jpg",
             type: "image"
@@ -60,8 +60,8 @@ const testData = [
         id: 2,
         text: "Which weighs more, a pound of feathers or a pound of bricks?",
         createTime: "2020-12-05 13:53:23",
-        likes: 0,
-        liked: 0,
+        likes: 1,
+        liked: true,
         media: null,
         author: {
             id: 3,
@@ -74,8 +74,8 @@ const testData = [
         id: 4,
         text: null,
         createTime: "2020-12-05 13:53:23",
-        likes: 0,
-        liked: 0,
+        likes: 3,
+        liked: false,
         media: {
             url: "test-video.mp4",
             type: "video"
