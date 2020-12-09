@@ -103,4 +103,10 @@ describe('Posts', () => {
     it('1 == 1', function () {
         expect(true).toBe(true)
     });
+
+    it('renders the correct amount of post', () => {
+        let renderedElements = wrapper.findAll('.post')
+        expect(testData.length).toEqual(renderedElements.length)
+    });
+
 });
