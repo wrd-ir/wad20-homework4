@@ -31,20 +31,26 @@ router.post('/', authorize,  (request, response) => {
 
     // Endpoint to create a new post
     PostModel.create(params, (c) => {
-        response.json({ ok: true })
+        response.status(201).json({ ok: true })
     })
 
 });
 
 
 router.put('/:postId/likes', authorize, (request, response) => {
-
+    //console.log(request)
     // Endpoint for current user to like a post
+    PostModel.like(request.currentUser.id, request.params.postId, () => {
+        response.status(200).send()
+    })
 });
 
 router.delete('/:postId/likes', authorize, (request, response) => {
 
     // Endpoint for current user to unlike a post
+    PostModel.unlike(request.currentUser.id, request.params.postId, () => {
+        response.status(200).send()
+    })
 
 });
 
