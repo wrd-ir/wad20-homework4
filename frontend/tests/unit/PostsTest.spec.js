@@ -109,4 +109,10 @@ describe('Posts', () => {
         expect(testData.length).toEqual(renderedElements.length)
     });
 
+    it('renders an media property if there is one', () => {
+        const renderedElements = wrapper.findAll('.post-image');
+        const mediaElements = testData.filter(item => item.media);
+        expect(mediaElements.length).toEqual(renderedElements.length)
+    })
+
 });
