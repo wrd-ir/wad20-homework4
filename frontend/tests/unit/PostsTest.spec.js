@@ -2,6 +2,7 @@ import {mount, createLocalVue} from '@vue/test-utils'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import Posts from "../../src/components/Posts.vue";
+import moment from 'moment';
 
 const localVue = createLocalVue();
 
@@ -125,6 +126,12 @@ describe('Posts', () => {
         const renderedImages = wrapper.findAll('.post-image > video');
         const mediaElements = testData.filter(item => item.media);
         expect(renderedImages.length).toEqual(1);
+    })
+
+    it('post create time is displayed in correct format', () => {
+        const responseDate = wrapper.find('div > span > small');
+        const formattedExampleDate = moment(testData[0].createTime).format('LLLL');
+        expect(responseDate.text()).toEqual(formattedExampleDate);
     })
 
 });
