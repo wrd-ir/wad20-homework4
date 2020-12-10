@@ -118,13 +118,11 @@ describe('Posts', () => {
 
     it('renders image if there is one', () => {
         const renderedImages = wrapper.findAll('.post-image > img');
-        const mediaElements = testData.filter(item => item.media);
         expect(renderedImages.length).toEqual(1);
     })
 
     it('renders video if there is one', () => {
         const renderedImages = wrapper.findAll('.post-image > video');
-        const mediaElements = testData.filter(item => item.media);
         expect(renderedImages.length).toEqual(1);
     })
 
