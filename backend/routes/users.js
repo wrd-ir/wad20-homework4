@@ -86,8 +86,8 @@ router.post('/login', (request, response) => {
             lastname: user.lastname,
             email: user.email,
             avatar: user.avatar,
-            //accessToken: createAccessToken(user.id)
-            accessToken: null // THis is the place where you should pass generated access token
+            accessToken: createAccessToken(user)
+            //accessToken: null // THis is the place where you should pass generated access token
         })
     });
 });
